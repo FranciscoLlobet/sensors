@@ -69,7 +69,7 @@ int16_t calculate_temperature_step(int16_t initial_temperature, int16_t scaled_r
     return initial_temperature - (((calculate_resistance(initial_temperature) - scaled_resistance) * 4096) / calculate_resistance_slope(initial_temperature));
 }
 
-int16_t calculate_temperature(int16_t scaled_resistance)
+int16_t calculate_temperature(uint16_t scaled_resistance)
 {
     int32_t temp = calculate_temperature_step(scaled_resistance - (int16_t)8192, scaled_resistance);
     return calculate_temperature_step(temp, scaled_resistance);

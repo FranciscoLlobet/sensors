@@ -84,7 +84,7 @@ int16_t calculate_temperature_step(int16_t initial_temperature, int16_t scaled_r
  * @param scaled_resistance Scaled resistance.
  * @return Calculated temperature.
  */
-int16_t calculate_temperature(int16_t scaled_resistance);
+int16_t calculate_temperature(uint16_t scaled_resistance);
 
 #ifdef __cplusplus
 }

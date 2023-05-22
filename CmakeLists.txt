@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.26)
 project(sensors)
 
+set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 
 find_package(GTest)
 
@@ -9,7 +11,7 @@ enable_testing()
 
 include_directories(sensors)
 
-add_library(temperature sensors/temperature.c)
+add_library(temperature SHARED sensors/temperature.c)
 
 add_executable(test_sensors sensors/test_sensors.cc)
 
