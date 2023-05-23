@@ -11,9 +11,9 @@ enable_testing()
 
 include_directories(sensors)
 
-add_library(temperature SHARED sensors/temperature.c)
+add_library(temperature SHARED sensors/temperature.c sensors/usqrt.c)
 
-add_executable(test_sensors sensors/test_sensors.cc)
+add_executable(test_sensors sensors/test_sensors.cc sensors/test_usqrt.cc)
 
 target_link_libraries(test_sensors temperature GTest::gtest_main)
 
